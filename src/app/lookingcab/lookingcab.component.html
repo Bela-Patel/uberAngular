@@ -1,0 +1,102 @@
+
+  <nav>
+    <a routerLink="/top"></a>
+  </nav>
+
+
+    <div style="width: 20%; margin-top: 29px; margin-left: 315px; box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.15); position: absolute;">
+
+      <!-- PickUP -->
+      <div class="lblpickup">
+        <label>Where can we pick you up? </label>
+      </div>
+      <div style="padding: 8px 16px;">
+        <select class="search" #pickup (change)="callPickup(pickup.value)">
+          <option value="0">Add a pickup location</option>
+          <option *ngFor="let location of locationData" value={{location.LocationName}}>
+            {{location.LocationName}}
+          </option>
+        </select>
+        <!--<div>
+      <input type="text" #pickup placeholder="Add a pickup location" class="search" (keyup)="getLocation(pickup.value)">
+      <a onclick="choosePickup" style="cursor:alias;">{{values}}</a>
+    </div>-->
+      </div>
+
+      <!-- Destination -->
+      <div class="lblpickup">
+        <label>Where to?</label>
+      </div>
+      <div style="padding: 8px 16px;">
+        <!--<div>
+      <input type="text" #destination placeholder="Enter your destination" class="search" (keyup)="getDestinationLocation(destination.value)">
+      <a>{{Destination}}</a>
+    </div>-->
+
+        <select class="search" #destination (change)="callDestination(destination.value)">
+          <option value="0">Enter your destination</option>
+          <option *ngFor="let location of locationData" value={{location.LocationName}}>
+            {{location.LocationName}}
+          </option>
+        </select>
+
+      </div>
+
+      <!-- Available Cab -->
+      <div class="divCab">
+        <div *ngFor="let item of cabAvailableData">
+
+          <!-- Cab -->
+          <div style="min-height: 72px;align-items: stretch;flex-direction: row;-webkit-box-direction: normal;box-sizing: border-box;display: flex;width: 100%;">
+            <div style="justify-content: center; align-items: center;flex-direction: column;">
+              <div style="height: 88px;width: 96px; justify-content: center;">
+                <img src="./assets/img/auto.png"  style="padding: 10px; width:64px; height: 64px;" />
+              </div>
+            </div>
+
+            <div style="padding: 20px 16px 20px 15px; min-width: 0; flex-grow: 1;flex-direction: column;  background-color: rgb(224, 235, 255);">
+              <div style="text-overflow: ellipsis;white-space: nowrap;font-size: 20px;line-height: 24px;font-family: Medium,system-ui, Helvetica, Arial, sans-serif;color: #000000;font-weight: 500;">
+                <div>
+                  <span>{{item.CabType}}</span>&nbsp;&nbsp; <img src="./assets/img/person.png" width="15px" height="15px" /><span>{{item.PersonCapacity}}</span>
+                </div>
+              </div>
+              <div style="min-height: 12px;color: #4E545E;font-family: Regular,system-ui, Helvetica, Arial, sans-serif;font-weight: normal;white-space: nowrap;line-height: 20px;">
+                <div style="flex-direction: row;-webkit-box-direction: normal;font-size: 14px;">
+                  <span>{{item.TotalMinsArrival}}</span>&nbsp;&nbsp;<span>{{item.TimeAtArrival}}</span>
+                </div>
+              </div>
+            </div>
+
+            <div style="padding-right: 16px;flex-direction: column;display: flex;font-family: Medium,system-ui, Helvetica, Arial, sans-serif;  background-color: rgb(224, 235, 255);">
+              <div style="flex-direction: row; font-size: 20px; font-weight: 500;">
+                <span>₹{{item.TotalAmount}}</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Cash -->
+          <div style="width: 100%;padding-top: 12px;box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 4px;">
+            <div style="padding-bottom: 8px; flex-direction: row; width: 100%; font-family: MoveMedium,system-ui, Helvetica, Arial, sans-serif;">
+              <div style="height: 24px;font-size: 16px;-webkit-box-align: center;">
+                <img *ngIf="isCash;else paytmImg" src="./assets/img/cash.png" style="padding-left: 10px;" />
+                <ng-template #paytmImg><img src="./assets/img/paytm.png" style="padding-left: 10px;" /></ng-template>
+                &nbsp;&nbsp;
+                <span style="font-weight: 500;">{{paytmParent}}</span>
+                <!--<app-PaymentDialogComponent (receivePaytm) ="receiveMethodParent($event)"></app-PaymentDialogComponent>-->
+                <img src="./assets/img/downArrow.png" style="float:right; margin-top: 10px;" (click)="openDialog();" id="Payment" />
+              </div>
+            </div>
+            <button style="min-height: 56px;font-size: 25px;line-height: 28px;background-color: rgb(0, 0, 0);border: none;color: #FFFFFF;width: 100%;font-family: Medium,system-ui, Helvetica, Arial, sans-serif;
+                    text-align: center; align-items: flex-start;font-weight: 400;padding: 1px 6px;display: inline-block;" (click)="bookUberAuto();">
+              Request UberAuto
+            </button>
+          </div>
+
+        </div>
+
+
+      </div>
+      </div>
+
+    
+

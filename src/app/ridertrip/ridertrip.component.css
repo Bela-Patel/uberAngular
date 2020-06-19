@@ -1,0 +1,136 @@
+.divmain {
+  overflow: auto;
+  margin-top: 8px;
+  flex: 1;
+  padding: 0 16px 0 16px;
+  box-sizing: border-box;
+  width: 100%;
+  align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  flex-direction: column;
+  display: flex;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  font-family: sans-serif;
+}
+
+.divsecond {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  flex-direction: row;
+  max-width: 1280px;
+  width: 100%;
+  display: flex;
+}
+
+.divsidebar {
+  flex-shrink: 0;
+  width: 224px;
+  display: block;
+}
+
+.ulclass {
+  width: inherit;
+  margin: 0;
+  padding: 8px 0 0 0;
+  list-style: none;
+  display: block;
+}
+
+.liclass {
+  margin-bottom: 8px;
+  display: list-item;
+  /*text-align: -webkit-match-parent;*/
+  list-style: none;
+}
+
+.aclass {
+  background-color: #FFFFFF;
+  padding: 16px 24px 16px 24px;
+  letter-spacing: .4px;
+  font-weight: 500;
+  text-decoration: none;
+  color: #000000;
+  font-size: 18px;
+  font-family: Regular;
+  align-items: center;
+  display: flex;
+  /*text-align: -webkit-match-parent;*/
+}
+
+.divthird {
+  max-width: 100%;
+  flex: 1;
+  display: block;
+}
+
+.h5 {
+  margin: 0 8px 0 8px;
+  font-size: 19px;
+  color: #000000;
+  line-height: 26px;
+  font-family: Regular;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.trip-container {
+  border: 1px solid transparent;
+  margin-bottom: 16px;
+  color: #000000;
+  line-height: 20px;
+  font-size: 18px;
+  font-family: sans-serif;
+  border-width: 1px;
+  border-style: solid;
+  border-color: rgb(238, 238, 238);
+  border-image: initial;
+}
+
+.spanclass {
+  margin-left: 8px;
+  color: #E54937;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.tripInfo {
+  display: block;
+  color: #000000;
+  line-height: 20px;
+  font-size: 18px;
+  font-family: Regular;
+}
+
+.ul {
+  padding: 12px 24px;
+  margin: 0;
+  list-style: none;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  /*margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  padding-inline-start: 40px;*/
+}
+
+.li {
+  -webkit-box-pack: justify;
+  justify-content: space-between;
+  padding: 12px 0px;
+  font-size: 18px;
+  cursor: pointer;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  flex-direction: row;
+  color: #000000;
+  line-height: 20px;
+}
+
+.noFilterData {
+  font-weight: 500;
+  padding-left: 20px;
+  color: #000000;
+  line-height: 20px;
+  font-size: 18px;
+  font-family: sans-serif;
+}

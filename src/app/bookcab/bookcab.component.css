@@ -1,0 +1,64 @@
+.topnav {
+  background-color: #333;
+  overflow: hidden;
+  right: 0;
+}
+
+  /* Style the links inside the navigation bar */
+  .topnav a {
+    float: left;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 30px;
+    text-decoration: none;
+    font-family: ff-clan-web-pro,"Helvetica Neue",Helvetica,sans-serif;
+    font-weight: 400;
+    line-height: 1.33333;
+  }
+
+    /* Change the color of links on hover */
+    .topnav a:hover {
+      //background-color: #ddd;
+      color: white;
+      cursor: default;
+    }
+
+
+
+.lblbookingdone {
+  color: #fff;
+  font-size: 33px;
+  /*line-height: 44px;*/
+  font-family: MoveMedium,system-ui, Helvetica, Arial, sans-serif;
+  background-color: mediumseagreen;
+  padding: 16px 16px;
+  font-weight: 700;
+}
+
+.lblMeetPickUP {
+  padding: 12px;
+  font-size: 18px;
+  font-family: Medium,system-ui, Helvetica, Arial, sans-serif;
+  color: dimgrey;
+  border-bottom: 2px solid #f6f6f6;
+  font-weight: 500;
+  text-align: center;
+}
+
+.lblPrice {
+  padding: 12px;
+  font-size: 19px;
+  font-family: Medium,system-ui, Helvetica, Arial, sans-serif;
+  color: black;
+  border-bottom: 2px solid #f6f6f6;
+  text-align: left;
+  font-weight: 500;
+}
+
+.brSpan {
+  font-size: 16px;
+  font-family: Medium,system-ui, Helvetica, Arial, sans-serif;
+  color: dimgrey;
+  border-bottom: 2px solid #f6f6f6;
+  font-weight: 500;
+}

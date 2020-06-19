@@ -1,0 +1,154 @@
+
+  <div style="width: 20%; margin-top: 29px; margin-left: 315px; box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.15);position: absolute;">
+    <!--top: 108px;    bottom: 24px;-->
+      <!-- PickUP -->
+      <div class="lblbookingdone">
+        <label>Your driver arrives in 5 mins</label>
+      </div>
+      <div class="lblMeetPickUP">
+        <label>Meet at the pickup point</label>
+      </div>
+
+      <div class="divCab">
+        <div *ngFor="let item of cabData">
+
+          <!-- Cab -->
+          <div style="min-height: 72px;align-items: stretch;flex-direction: row;-webkit-box-direction: normal;box-sizing: border-box;display: flex;width: 100%;">
+
+            <div style="padding: 20px 16px 20px 15px; min-width: 0; flex-grow: 1;flex-direction: column;">
+              <div style="text-overflow: ellipsis;white-space: nowrap;font-size: 22px;line-height: 24px;font-family: Medium,system-ui, Helvetica, Arial, sans-serif;color: #000000;font-weight: 600;">
+                <div>
+                  <span>{{item.CabNumber}}</span>
+                </div>
+              </div>
+              <div style="min-height: 12px;color: #4E545E;font-family: Regular,system-ui, Helvetica, Arial, sans-serif;white-space: nowrap;line-height: 20px; padding-top: 3px;">
+                <div style="flex-direction: row;-webkit-box-direction: normal;font-size: 18px; font-weight: 400;">
+                  <span>{{item.CabName}}</span>
+                </div>
+              </div>
+              <div style="min-height: 12px;color: #4E545E;font-family: Regular,system-ui, Helvetica, Arial, sans-serif;white-space: nowrap;line-height: 20px; padding-top: 3px;">
+                <div style="flex-direction: row;-webkit-box-direction: normal;font-size: 18px; font-weight: 400;">
+                  <span>{{item.DriverName}}</span> &nbsp;<b>.</b> <img src="./assets/img/star.png" width="15px" height="15px" /><span>{{item.StarCount}}</span>
+                </div>
+              </div>
+            </div>
+
+            <div style="justify-content: center; align-items: center;flex-direction: column; padding-top: 21px;">
+              <div style="height: 88px;width: 96px; justify-content: center;">
+                <img src="./assets/img/driver.png" width="64px" height="64px" />
+              </div>
+            </div>
+
+          </div>
+
+          <div style="min-height: 72px;align-items: stretch;flex-direction: row;-webkit-box-direction: normal;box-sizing: border-box;display: flex;width: 100%;">
+
+
+            <div style="justify-content: center; align-items: center;flex-direction: column; padding-top: 21px;">
+              <div style="height: 46px;width: 96px; justify-content: center; padding-left: 52px;">
+                <img src="./assets/img/call.png" />
+              </div>
+              <div style="min-height: 12px;color: #4E545E;font-family: Regular,system-ui, Helvetica, Arial, sans-serif;font-weight: normal;white-space: nowrap;line-height: 20px; padding-top: 3px;">
+                <div style="flex-direction: row;-webkit-box-direction: normal;font-size: 16px; font-weight: 400; padding-left: 41px;">
+                  <span>Call Driver</span>
+                </div>
+              </div>
+            </div>
+
+            <div style="justify-content: center; align-items: center;flex-direction: column; padding-top: 21px;">
+              <div style="height: 46px;width: 96px; justify-content: center; padding-left: 42px;">
+                <img src="./assets/img/Map.png" />
+              </div>
+              <div style="min-height: 12px;color: #4E545E;font-family: Regular,system-ui, Helvetica, Arial, sans-serif;font-weight: normal;white-space: nowrap;line-height: 20px; padding-top: 3px;">
+                <div style="flex-direction: row;-webkit-box-direction: normal;font-size: 16px; font-weight: 400; padding-left: 18px;">
+                  <span>Share my trip</span>
+                </div>
+              </div>
+            </div>
+
+            <div style="justify-content: center; align-items: center;flex-direction: column; padding-top: 21px;">
+              <div style="height: 46px;width: 96px; justify-content: center; padding-left: 35px;">
+                <img src="./assets/img/emergency.png" />
+              </div>
+              <div style="min-height: 12px;color: #4E545E;font-family: Regular,system-ui, Helvetica, Arial, sans-serif;font-weight: normal;white-space: nowrap;line-height: 20px; padding-top: 3px;">
+                <div style="flex-direction: row;-webkit-box-direction: normal;font-size: 16px; font-weight: 400; padding-left: 19px;">
+                  <span>Emergency</span>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <div style="min-height: 72px;align-items: stretch;flex-direction: row;-webkit-box-direction: normal;box-sizing: border-box;display: flex;width: 100%;">
+
+            <div style="justify-content: center; align-items: center;flex-direction: column; ">
+              <div style="justify-content: center; padding: 29px 0px 10px 9px;">
+                  <img *ngIf="isCash;else paytmImg" src="./assets/img/cash.png" />
+                  <ng-template #paytmImg><img src="./assets/img/paytm.png"/></ng-template>
+              </div>
+            </div>
+
+            <div class="lblPrice" style="padding: 20px 16px 20px 15px; min-width: 0; flex-grow: 1;flex-direction: column; ">
+              <div style="text-overflow: ellipsis;white-space: nowrap;line-height: 24px;font-family: Medium,system-ui, Helvetica, Arial, sans-serif;">
+                <div>
+                  <span>Price ₹{{item.Price}}</span><br />
+                  <span class="brSpan">{{paytmParent}}</span>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <div style="min-height: 72px;align-items: stretch;flex-direction: row;-webkit-box-direction: normal;box-sizing: border-box;display: flex;width: 100%;">
+
+            <div style="justify-content: center; align-items: center;flex-direction: column; ">
+              <div style="justify-content: center; padding: 29px 0px 10px 9px;">
+                <img src="./assets/img/circle.png" />
+              </div>
+            </div>
+
+            <div class="lblPrice" style="padding: 20px 16px 20px 15px; min-width: 0; flex-grow: 1;flex-direction: column; ">
+              <div style="text-overflow: ellipsis;white-space: nowrap;line-height: 24px;font-family: Medium,system-ui, Helvetica, Arial, sans-serif;">
+                <div>
+                  <span>From {{item.FromLocation}}</span><br />
+                  <span class="brSpan">Ahmedabad, Gujarat</span>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <div style="min-height: 72px;align-items: stretch;flex-direction: row;-webkit-box-direction: normal;box-sizing: border-box;display: flex;width: 100%; border-bottom:none;">
+
+            <div style="justify-content: center; align-items: center;flex-direction: column; ">
+              <div style="justify-content: center; padding: 29px 0px 10px 9px;">
+                <img src="./assets/img/square.png" />
+              </div>
+            </div>
+
+            <div class="lblPrice" style="padding: 20px 16px 20px 15px; min-width: 0; flex-grow: 1;flex-direction: column; ">
+              <div style="text-overflow: ellipsis;white-space: nowrap;line-height: 24px;font-family: Medium,system-ui, Helvetica, Arial, sans-serif;">
+                <div>
+                  <span>To {{item.ToLocation}}</span><br />
+                  <span class="brSpan">Ahmedabad, Gujarat</span>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <div style="width: 100%;padding-top: 12px;box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 4px;">
+            <div style="padding-bottom: 8px; flex-direction: row; width: 100%; font-family: MoveMedium,system-ui, Helvetica, Arial, sans-serif;">
+              <button style="min-height: 56px;font-size: 25px;line-height: 28px;background-color: rgba(211, 211, 211, 0.46);border: none;width: 100%;font-family: Medium,system-ui, Helvetica, Arial, sans-serif;
+                    text-align: center; align-items: flex-start;font-weight: 400;padding: 1px 6px;display: inline-block; cursor: pointer;" (click)="cancelUberAuto();">
+                Cancel this trip
+              </button>
+            </div>
+
+          </div>
+        </div>
+      </div>
+  </div>
+
+
+

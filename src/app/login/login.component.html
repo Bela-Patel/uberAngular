@@ -1,0 +1,21 @@
+
+<div>
+  <form [formGroup]="loginData" (ngSubmit)="loginSubmit()">
+    <div  style="padding-left: 39px;">
+        <img src="assets/img/uberLogo.png" alt="image" class="img">
+    </div>
+    <div>
+      <label for="SignIn" class="labelSignIn" style="font-size: 1.71429rem;">Sign In </label>
+    </div>
+    <div>
+      <label for="MobileNumber" class="MobileNumber">Mobile Number </label>
+    </div>
+    <div class="div">
+      <input type="text" id="MobileNumber" formControlName="MobileNumber" maxlength="10" class="inputLogin"  placeholder="Mobile Number" (keypress)="numberOnly($event)"/>
+    </div>
+    <div class="div">
+      <input type="submit" class="btnLogin" value="NEXT" />
+    </div>
+  </form>
+</div>
+

@@ -1,0 +1,134 @@
+<router-outlet name="topbar"></router-outlet>
+
+<div class="divmain">
+  <div class="divsecond">
+    <div class="divsidebar">
+      <div style="position: fixed;display: block;">
+        <nav style="background: #FFFFFF; width: 224px;display: block;">
+          <ul class="ulclass">
+            <li class="liclass">
+              <a [routerLink]="['/lookingcab']" class="aclass"> Request a Ride </a>
+            </li>
+            <li class="liclass">
+              <a [routerLink]="['/lookingcab']" class="aclass" style="background-color: #D4E2FC; font-family: Medium;"> My trips </a>
+            </li>
+            <li class="liclass">
+              <a class="aclass" [routerLink]="['/wallet']"> Wallet </a>
+            </li>
+            <li class="liclass">
+              <a class="aclass"> Free rides </a>
+            </li>
+            <li class="liclass">
+              <a class="aclass"> Profile Settings </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+    <div class="divthird">
+      <div style="-webkit-box-orient: horizontal; -webkit-box-direction: normal; flex-direction: row; display: flex;">
+        <div style="flex: 1;display: block;">
+          <div style="margin: auto;padding: 0 230px 24px 16px; max-width: 630px;display: block;">
+            <div style="margin: 0 auto;max-width: 587px;width: 100%; -webkit-box-orient: vertical;-webkit-box-direction: normal;flex-direction: column;display: flex;">
+              <div style="padding: 16px;position: relative;">
+                <div style="display: inline-flex;flex-direction: row;cursor: pointer;" (click)="openDivFilterTrip();">
+                  <img src="./assets/img/filter.png" style="overflow: hidden;" />
+                  <h5 class="h5">Filter trips</h5>
+                  <img src="./assets/img/downArrow.png" style="overflow: hidden;height: 13px;width: 22px; padding-top: 8px;" />
+                </div>
+                <div *ngIf="isDivFiltertrip" style="box-shadow: rgb(175, 175, 175) 0px 2px 4px -1px;background: #FFFFFF; position: absolute; font-family: sans-serif;-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">
+                  <ul class="ul">
+                    <li class="li" *ngFor="let li of filtertrip" (click)="getDivFilterTrip(li)">{{ li }}</li>
+                  </ul>
+                </div>
+              </div>
+              <div *ngIf="isNoFilterData;else dataTemp" class="noFilterData">No trips found for the selected time period</div>
+              <ng-template #dataTemp>
+
+                <div style="display: block;">
+                  <div *ngFor="let item of tripData">
+                    <div class="trip-container">
+                      <div style="padding: 16px;cursor: pointer;-webkit-box-direction: normal;display: flex;flex-direction: row;">
+                        <div style="text-align: center;margin-right: 16px;width: 16px;">
+                          <img *ngIf="!isMinus || item.TripDetailsId != isSelected;else minusImg" src="./assets/img/plus.png" style="overflow: hidden; text-align: center;" (click)="openTripDiv(item);" />
+                          <ng-template #minusImg>
+                            <img *ngIf="item.TripDetailsId == isSelected" src="./assets/img/minus.png" style="overflow: hidden; text-align: center;width: 20px;height: 19px;"
+                                 (click)="closeTripDiv(item);" />
+                          </ng-template>
+                        </div>
+                        <div style="flex: 1;">
+                          <div>{{item.DateTime}}</div>
+                          <div style="padding-top: 8px;font-size: 20px;font-family: Medium;display: block;font-weight: 600;">
+                            ₹{{item.TotalAmount}}
+                            <span class="spanclass">{{item.CancelTrip}}</span>
+                          </div>
+                        </div>
+                        <div style="white-space: nowrap;text-align: right;display: block;">
+                          <div>{{item.RegionName}}</div>
+                          <div style="padding-top: 4px;">
+                            <div>
+                              <img src="./assets/img/cash.png" style="vertical-align: middle; width: 24px;height: 16px;overflow: hidden;text-align: right;" />
+                              <span style="padding-left: 12px;font-family: sans-serif;position: relative;text-align: right;">{{item.PaymentType}}</span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="tripInfo" *ngIf="isShow && item.TripDetailsId == isSelected">
+                        <div style="padding: 0px 16px 16px 48px;-webkit-box-orient: vertical;-webkit-box-direction: normal; display: flex;flex-direction: column;">
+                          <div style="margin-bottom: 20px;font-family: Medium;" >
+                            {{item.TripWith}}
+                          </div>
+                          <div style="display: flex;">
+                            <div style="-webkit-box-direction: normal;">
+                              <div style="display: inline-flex;flex-direction: row;">
+                                <div style="margin: 4px 16px 0px 0px;display: block;-webkit-box-direction: normal;">
+                                  <div style="background: rgb(226, 226, 226);border-width: 2px;border-style: solid;border-color: rgb(226, 226, 226);border-image: initial;
+                                  height: 9px;width: 9px;"></div>
+                                </div>
+                                <div>
+                                  {{item.FromLocation}}
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div style="padding: 16px 16px 18px 24px;margin-top: 4px;-webkit-box-pack: justify;justify-content: space-between;white-space: nowrap;border-top: 1px solid #EEEEEE;flex-direction: row;display: flex;">
+                          <div style="flex: 1;"></div>
+                          <div style="color: #000000;line-height: 20px;font-size: 18px; font-family: sans-serif; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);">
+                            <a style="text-decoration: none;color: -webkit-link;cursor: pointer;">
+                              <div style="color: rgb(23, 66, 145);-webkit-box-pack: center;justify-content: center;font-family: Medium;-webkit-box-orient: horizontal;
+                               -webkit-box-direction: normal;flex-direction: row;-webkit-box-align: center; align-items: center;display: inline-flex;" (click)="detailClick(item);">
+                                <div>Details</div>
+                                <img src="./assets/img/rightArrow.png" style="overflow: hidden; text-align: center;fill: rgb(23, 66, 145);margin-left: 8px;width: 20px;height: 20px;margin-top: 4px;" />
+                              </div>
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+              </ng-template>
+            </div>
+          </div>
+        </div>
+        <div style="width: 224px;font-family: sans-serif;-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">
+          <div style="width: 220px;-webkit-box-orient: vertical;-webkit-box-direction: normal; flex-direction: column; display: flex;">
+            <img src="./assets/img/UberTaxi.png" style="overflow: hidden; height: 170px;"/>
+            <div style="margin: 16px 0 8px 0; font-size: 20px;color: #000000;line-height: 20px;">
+              Get a ride in minutes
+            </div>
+            <div style="    color: #4E545B;line-height: 18px;font-size: 13px;margin-bottom: 16px;">
+              Book an Uber from a web browser, no app install necessary.
+            </div>
+            <a style="align-self: flex-start;outline: 0;background-color: #1E54B7;padding: 12px 20px 12px 20px;border: 0;font-size: 17px;color: #FFFFFF;cursor: pointer;
+                text-decoration: none;line-height: 20px;" [routerLink]="['/lookingcab']">
+              Request a Ride
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

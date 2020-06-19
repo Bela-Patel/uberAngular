@@ -1,1 +1,51 @@
 /* You can add global styles to this file, and also import other style files */
+
+.img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 150px;
+}
+
+.labelSignIn, .MobileNumber {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 799px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-family: ff-clan-web-pro,"Helvetica Neue",Helvetica,sans-serif;
+  font-weight: 400;
+  line-height: 1.33333;
+}
+
+.div {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 799px;
+}
+
+.inputLogin {
+  width: 43%;
+  padding: 10px;
+  font-size: 16px;
+}
+
+.btnLogin {
+  font-weight: 600;
+  font-size: 16px;
+  padding: 11px 20px;
+  border-radius: 0;
+  border: 2px solid #11939A;
+  line-height: 18px;
+  text-align: left;
+  transition: all .4s ease !important;
+  cursor: pointer;
+  overflow: visible;
+  background-color: #11939A;
+  width: 45%;
+  margin-top: 27px;
+  color: #FFF;
+}
+

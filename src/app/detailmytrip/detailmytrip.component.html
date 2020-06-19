@@ -1,0 +1,63 @@
+<div class="divmain">
+  <div class="divsecond">
+    <div class="divsidebar">
+      <div style="position: fixed;display: block;">
+
+        <div class="divBackTrips" [routerLink]="['/ridertrip']">
+          <div>
+            <img src="./assets/img/leftArrow.png" style="overflow: hidden; margin-right: 8px; width: 25px;" />
+          </div>
+          <div style="padding-top: 4px;">Back to trips</div>
+        </div>
+      </div>
+    </div>
+    <div class="divthird">
+      <div style="-webkit-box-orient: horizontal; -webkit-box-direction: normal; flex-direction: row; display: flex;">
+        <div style="flex: 1;display: block;width: 50%;">
+          <!--<div *ngFor="let trip of tripData">-->
+            <div style="margin: auto;padding: 0 230px 24px 16px; max-width: 483px;display: block;">
+              <div style="margin: 0 auto;max-width: 587px;width: 100%; -webkit-box-orient: vertical;-webkit-box-direction: normal;flex-direction: column;display: flex;">
+                <div style="color: rgb(0, 0, 0);line-height: 20px;font-size: 19px;font-family: sans-serif;padding-bottom: 12px;padding-top: 21px;">
+                  <span>{{tripData.DateTime}}</span>
+                  <span>&nbsp;Request</span>
+                </div>
+                <div style="-webkit-box-orient: vertical;-webkit-box-direction: normal;flex-direction: column;display: flex;">
+                  <div class="cancelclass">{{tripData.CancelTrip}}</div>
+                  <div style="-webkit-box-pack: justify;justify-content: space-between;display: inline-flex;flex-direction: row; padding-top: 4px;">
+                    <div class="resend-receipt">
+                      Resend Receipt
+                      <img src="./assets/img/receipt.png" style="overflow: hidden; margin-right: 8px; width: 20px; height: 17px;" />
+                    </div>
+                    <div>
+                      <div class="invoice">
+                        Save Invoice
+                        <img src="./assets/img/saveInvoice.png" style="overflow: hidden; margin-right: 8px;fill: #1E54B7;" />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div style="margin-top: 20px;font-family: sans-serif;-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">
+                  <div style="display: flex;">
+                    <img src="./assets/img/locationmap.png" style="overflow: hidden; text-align: center;height: 100%;width: 100%;" />
+                  </div>
+                  <div style="width: 100%;">
+                    <div style="margin-top: 12px;color: #000000;line-height: 20px;font-size: 17px;font-family: sans-serif;">
+                      <div style="display: inline-flex;" >
+                        <div style="margin: 4px 16px 0 0;">
+                          <div style="background: #E2E2E2;border: 2px solid #E2E2E2;height: 12px;width: 12px;"></div>
+                        </div>
+                        <div style="margin-top: 3px;">{{tripData.FromLocation}}</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          <!--</div>-->
+          </div>
+          <div style="width: 224px;font-family: sans-serif;-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">
+          </div>
+        </div>
+    </div>
+  </div>
+</div>
